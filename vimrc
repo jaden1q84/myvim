@@ -452,8 +452,8 @@ set completeopt=menu                        "关闭预览窗口
 "  < SrcExpl 插件配置 >
 " -----------------------------------------------------------------------------
 " 增强源代码浏览，其功能就像Windows中的"Source Insight"
-" nmap <F3> :SrcExplToggle<CR>                "打开/闭浏览窗口
-nmap <F3> :call Call_srcexpl()<CR>                "打开/闭浏览窗口
+nmap <F3> :SrcExplToggle<CR>                "打开/闭浏览窗口
+"nmap <F3> :call Call_srcexpl()<CR>                "打开/闭浏览窗口
 let g:SrcExpl_updateTagsCmd = "ctags -L cscope.files"
 let g:SrcExpl_isUpdateTags = 0 
 function Call_srcexpl()
