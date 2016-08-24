@@ -413,7 +413,7 @@ let NERDTreeWinSize=35
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos="right"
+let NERDTreeWinPos="left"
 " Automatically open a NERDTree if no files where specified
 " autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if the only window left open is a NERDTree
@@ -491,7 +491,7 @@ let c_cpp_comments = 0
 nmap tb :TlistClose<CR>:TagbarToggle<CR>
 
 let g:tagbar_width=30                       "设置窗口宽度
-let g:tagbar_left=1                         "在左侧窗口中显示
+let g:tagbar_left=0                         "在左侧窗口中显示
 
 " -----------------------------------------------------------------------------
 "  < TagList 插件配置 >
@@ -507,7 +507,7 @@ let Tlist_Show_One_File=1                   "只显示当前文件的tags
 let Tlist_Exit_OnlyWindow=1                 "如果Taglist窗口是最后一个窗口则退出Vim
 let Tlist_File_Fold_Auto_Close=1            "自动折叠
 let Tlist_WinWidth=30                       "设置窗口宽度
-let Tlist_Use_Right_Window=0                "在右侧窗口中显示
+let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 
 " -----------------------------------------------------------------------------
 "  < txtbrowser 插件配置 >
