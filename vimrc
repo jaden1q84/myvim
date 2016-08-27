@@ -154,6 +154,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'taglist.vim'
 Bundle 'TxtBrowser'
 Bundle 'ZoomWin'
+Bundle 'DoxygenToolkit.vim'
 
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
@@ -213,11 +214,11 @@ imap <c-k> <Up>
 " Ctrl + J 插入模式下光标向下移动
 imap <c-j> <Down>
 
-" Ctrl + H 插入模式下光标向左移动
-imap <c-h> <Left>
+" Ctrl + B 插入模式下光标向左移动
+imap <c-b> <Left>
 
-" Ctrl + L 插入模式下光标向右移动
-imap <c-l> <Right>
+" Ctrl + F 插入模式下光标向右移动
+imap <c-f> <Right>
 
 " 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
 " au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
@@ -382,6 +383,17 @@ noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
 " -----------------------------------------------------------------------------
+"  < DoxygenToolkit 插件配置 >
+" -----------------------------------------------------------------------------
+nmap <Leader>da :DoxAuthor<CR>
+nmap <Leader>df :Dox<CR>
+nmap <Leader>dl :DoxLic<CR>
+let g:DoxygenToolkit_authorName="Jaden Liang <jaden1q84@gmail.com>"
+let g:DoxygenToolkit_compactDoc = "yes"
+let g:DoxygenToolkit_versionString = "1.0"
+"let g:DoxygenToolkit_licenseTag="My own license"   <-- !!! Does not end with "\<enter>"
+
+" -----------------------------------------------------------------------------
 "  < neocomplcache 插件配置 >
 " -----------------------------------------------------------------------------
 " 关键字补全、文件路径补全、tag补全等等，各种，非常好用，速度超快。
@@ -395,6 +407,7 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 " 我主要用于C/C++代码注释(其它的也行)
 " 以下为插件默认快捷键，其中的说明是以C/C++为例的，其它语言类似
 " <Leader>ci 以每行一个 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
+" <Leader>cs 以 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
 " <Leader>cm 以一个 /* */ 注释选中行(选中区域所在行)，再输入则称重复注释
 " <Leader>cc 以每行一个 /* */ 注释选中行或区域，再输入则称重复注释
 " <Leader>cu 取消选中区域(行)的注释，选中区域(行)内至少有一个 /* */
@@ -537,12 +550,12 @@ if has("cscope")
     "如果你想反向搜索顺序设置为1
     set csto=1
     "在当前目录中添加任何数据库
-"    if filereadable("cscope.out")
-"        cs add cscope.out
+    if filereadable("cscope.out")
+        cs add cscope.out
     "否则添加数据库环境中所指出的
-"    elseif $CSCOPE_DB != ""
-"        cs add $CSCOPE_DB
-"    endif
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
     set cscopeverbose
     "快捷键设置
     nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
