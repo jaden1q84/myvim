@@ -389,7 +389,7 @@ nmap <Leader>da :DoxAuthor<CR>
 nmap <Leader>df :Dox<CR>
 nmap <Leader>dl :DoxLic<CR>
 let g:DoxygenToolkit_authorName="Jaden Liang <jaden1q84@gmail.com>"
-let g:DoxygenToolkit_compactDoc = "yes"
+" let g:DoxygenToolkit_compactDoc = "yes"
 let g:DoxygenToolkit_versionString = "1.0"
 "let g:DoxygenToolkit_licenseTag="My own license"   <-- !!! Does not end with "\<enter>"
 
