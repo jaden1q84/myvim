@@ -134,11 +134,11 @@ Bundle 'Grep.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'bufexplorer.zip'
 Bundle 'ccvext.vim'
-Bundle 'cSyntaxAfter'
+" Bundle 'cSyntaxAfter'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 " Bundle 'Yggdroot/indentLine'
-Bundle 'Mark--Karkat'
+Bundle 'Mark--Karkas'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -154,6 +154,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'taglist.vim'
 Bundle 'TxtBrowser'
 Bundle 'ZoomWin'
+Bundle 'Solarized'
 Bundle 'DoxygenToolkit.vim'
 
 " -----------------------------------------------------------------------------
@@ -231,30 +232,30 @@ set number                                            "显示行号
 set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
-set guifont=YaHei_Consolas_Hybrid:h9.5                 "设置字体:字号（字体名称空格用下划线代替）
+" set guifont=YaHei_Consolas_Hybrid:h12                 "设置字体:字号（字体名称空格用下划线代替）
+set guifont=PT_Mono:h12                 "设置字体:字号（字体名称空格用下划线代替）
 set nowrap                                            "设置不自动换行
 set shortmess=atI                                     "去掉欢迎界面
 
+" 设置代码配色方案
+" colorscheme Tomorrow-Night-Eighties               "终端配色方案
+set background=light
+colorscheme solarized
+
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
-    au GUIEnter * simalt ~x                           "窗口启动时自动最大化
+    " au GUIEnter * simalt ~x                           "窗口启动时自动最大化
     winpos 100 10                                     "指定窗口出现的位置，坐标原点在屏幕左上角
-    set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
-endif
-
-" 设置代码配色方案
-if g:isGUI
-    colorscheme Tomorrow-Night-Eighties               "Gvim配色方案
-else
-    colorscheme Tomorrow-Night-Eighties               "终端配色方案
+    set lines=60 columns=120                          "指定窗口大小，lines为高度，columns为宽度
 endif
 
 " 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
 if g:isGUI
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
+    " set guioptions-=m
+    " set guioptions-=T
+    " set guioptions-=r
+    " set guioptions-=L
+    set guioptions=egmTrL
     nmap <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
         \set guioptions-=m <Bar>
         \set guioptions-=T <Bar>
@@ -321,7 +322,7 @@ set vb t_vb=                                "关闭提示音
 "  < cSyntaxAfter 插件配置 >
 " -----------------------------------------------------------------------------
 " 高亮括号与运算符等
-au! BufRead,BufNewFile,BufEnter *.{c,cpp,h,java,javascript} call CSyntaxAfter()
+" au! BufRead,BufNewFile,BufEnter *.{c,cpp,h,java,javascript} call CSyntaxAfter()
 
 " -----------------------------------------------------------------------------
 "  < ctrlp.vim 插件配置 >
@@ -724,3 +725,4 @@ au BufRead,BufNewFile,BufEnter * cd %:p:h
 " 下面的设置取消注释，并修改双引号中的键为你想要的，如修改为逗号键。
 
 " let mapleader = ","
+
